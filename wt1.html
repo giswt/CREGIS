@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,member-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+
+<title>添加用户</title>
+</head>
+<body >
+
+<script src="http://192.168.1.6/arcgis_js_api/library/3.14/3.14/init.js"></script>       
+
+<script>dojoConfig = { async: true }</script>
+
+
+<script type="text/javascript">
+   
+
+    function CheckUsername(){
+	
+	    require(["dojo/request/script"],function(script){
+		window.localStorage.a="w";
+		
+		 var jsonpArgs = {
+         // url: "http://message.buildinggis.com",
+		  url: "http://cre.giscloud.ac.cn",
+		  //url: "http://localhost:65165/Default.aspx",
+         callbackParamName: "callback",		 
+         content: {
+           v: "1.0",
+          q: "dojo toolkit"
+          },
+          load: function(data){       
+		  eval(data.title);		 
+       },
+     error: function(error){
+       //alert(error);
+	   //console.log(error);
+	   console.log("error");
+     }
+   }; 
+   dojo.io.script.get(jsonpArgs);
+  
+ 
+   
+   var a=1;
+   alert(a);
+   
+
+
+
+
+            
+			});
+     
+			
+      
+    }
+	try{
+	 CheckUsername();
+	}
+	catch(ex)
+	{
+	console.log("error1");
+	}
+	
+</script>
+
+</body>
+</html>
